@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cifar10-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: cifar10
+  template:
+    metadata:
+      labels:
+        app: cifar10
+    spec:
+      containers:
+      - name: cifar10-container
+        image: cifar10-api:latest
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 8000
+        resources:
+          requests:
+            cpu: "200m"
+            memory: "256Mi"
+          limits:
+            cpu: "500m"
+            memory: "512Mi"
