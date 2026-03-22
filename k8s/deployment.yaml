@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: cifar10-container
-        image: cifar10-api:latest
+        image: cifar10-api:v2
         imagePullPolicy: Never
         ports:
         - containerPort: 8000

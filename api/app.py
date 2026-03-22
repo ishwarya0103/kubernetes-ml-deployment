@@ -6,8 +6,11 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 import torchvision.transforms as transforms
+from prometheus_fastapi_instrumentator import Instrumentator
 
 app = FastAPI()
+
+Instrumentator().instrument(app).expose(app)
 
 class_names = ['airplane', 'automobile', 'bird', 'cat', 'deer',
                'dog', 'frog', 'horse', 'ship', 'truck']

@@ -1,0 +1,18 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: cifar10-service-monitor
+  namespace: monitoring
+  labels:
+    release: kube-prom-stack
+spec:
+  selector:
+    matchLabels:
+      app: cifar10
+  namespaceSelector:
+    matchNames:
+      - default
+  endpoints:
+    - port: http
+      path: /metrics
+      interval: 15s

@@ -6,14 +6,20 @@ __pycache__/
 # Data
 data/
 
-# Jupyter
-.ipynb_checkpoints/
+# Models
+models/
+*.pth
+*.joblib
+
+# MLflow
+mlruns/
+
+# Airflow
+airflow/logs/
+airflow/*.db
 
 # OS
 .DS_Store
 
-# Model files (optional)
-*.pth
-
-# Docker
-*.log
+# Jupyter
+.ipynb_checkpoints/

@@ -4,3 +4,5 @@ torch
 torchvision
 pillow
 python-multipart
+prometheus-fastapi-instrumentator
+pip install joblib
